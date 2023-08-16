@@ -42,10 +42,13 @@ namespace TelegaBot4HealthClubFromCity
         }
 
 
+/*
         private static async void Bot_OnMessage(object sender, EventArgs e)
         {
 
         }
+*/
+
 
 
     }
