@@ -25,10 +25,20 @@ namespace TelegaBot4HealthClubFromCity
 
             botClient.GetMeAsync();
 
+            Console.WriteLine("Запущен бот " + botClient.GetMeAsync().Result.FirstName);
+
+            
             // botClient.OnMessage += Bot_OnMessage;
             // botClient.StartReceiving();
 
             return 0;
+        }
+
+
+        public static async Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
+        {
+            // Некоторые действия
+            Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(exception));
         }
 
 
