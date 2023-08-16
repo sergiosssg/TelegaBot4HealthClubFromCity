@@ -14,7 +14,20 @@ namespace TelegaBot4HealthClubFromCity
 
         private static  string BotTokem = "6592601003:AAFBLd-o2bDUxhM_nMsWV74B3Rc_rl_-abc";
 
-        TelegramBotClient BotClient = new TelegramBotClient(BotTokem);
+        private static TelegramBotClient BotClient = new TelegramBotClient(BotTokem);
+
+
+        public static int RunBot()
+        {
+
+            return 0;
+        }
+
+
+        private static async void Bot_OnMessage(object sender, EventArgs e)
+        {
+
+        }
 
 
     }
