@@ -3,10 +3,10 @@
 
 using Telegram.Bot;
 
-var BotTokem = "6592601003:AAFBLd-o2bDUxhM_nMsWV74B3Rc_rl_-abc";
+string BotTokem = "6592601003:AAFBLd-o2bDUxhM_nMsWV74B3Rc_rl_-abc";
 
 
-var BotClient = new TelegramBotClient(BotTokem);
+TelegramBotClient BotClient = new TelegramBotClient(BotTokem);
 
 Console.WriteLine("Hello, World!");
 
