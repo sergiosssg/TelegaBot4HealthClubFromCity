@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Telegram.Bot;
+using Telegram.Bot.Args;
+using Telegram.Bot.Types;
+
 
 
 namespace TelegaBot4HealthClubFromCity
@@ -14,7 +17,7 @@ namespace TelegaBot4HealthClubFromCity
 
         private static  string botTokem = "6592601003:AAFBLd-o2bDUxhM_nMsWV74B3Rc_rl_-abc";
 
-        private static TelegramBotClient botClient = new TelegramBotClient(botTokem);
+        private static ITelegramBotClient botClient = new TelegramBotClient(botTokem);
 
 
         public static int RunBot()
