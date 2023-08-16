@@ -17,21 +17,38 @@ namespace TelegaBot4HealthClubFromCity
 
         private static  string botTokem = "6592601003:AAFBLd-o2bDUxhM_nMsWV74B3Rc_rl_-abc";
 
-        private static ITelegramBotClient botClient = new TelegramBotClient(botTokem);
+        private static ITelegramBotClient botTelegaClient = new TelegramBotClient(botTokem);
 
 
         public static int RunBot()
         {
 
-            botClient.GetMeAsync();
+            //botTelegaClient.GetMeAsync();
 
-            Console.WriteLine("Запущен бот " + botClient.GetMeAsync().Result.FirstName);
+            Console.WriteLine("Запущен бот " + botTelegaClient.GetMeAsync().Result.FirstName);
 
             
-            // botClient.OnMessage += Bot_OnMessage;
-            // botClient.StartReceiving();
+            // botTelegaClient.OnMessage += Bot_OnMessage;
+            // botTelegaClient.StartReceiving();
 
             return 0;
+        }
+
+
+        public static async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
+        {
+            // Некоторые действия
+            Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(update));
+            if (update.Type == Telegram.Bot.Types.Enums.UpdateType.Message)
+            {
+                var message = update.Message;
+                if (message.Text.ToLower() == "/start")
+                {
+                    await botClient.SendTextMessageAsync(message.Chat, "Добро пожаловать на борт, добрый путник!");
+                    return;
+                }
+                await botClient.SendTextMessageAsync(message.Chat, "Привет-привет!!");
+            }
         }
 
 
@@ -41,13 +58,6 @@ namespace TelegaBot4HealthClubFromCity
             Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(exception));
         }
 
-
-/*
-        private static async void Bot_OnMessage(object sender, EventArgs e)
-        {
-
-        }
-*/
 
 
 
