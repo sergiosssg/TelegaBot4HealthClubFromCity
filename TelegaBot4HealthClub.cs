@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Args;
+using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 
 
@@ -27,9 +28,24 @@ namespace TelegaBot4HealthClubFromCity
 
             Console.WriteLine("Запущен бот " + botTelegaClient.GetMeAsync().Result.FirstName);
 
-            
+
             // botTelegaClient.OnMessage += Bot_OnMessage;
             // botTelegaClient.StartReceiving();
+
+            var cts = new CancellationTokenSource();
+            var cancellationToken = cts.Token;
+
+            var receiverOptions = new ReceiverOptions
+            {
+                AllowedUpdates = { }, // receive all update types
+            };
+
+            botTelegaClient.StartReceiving(
+                HandleUpdateAsync,
+                HandleErrorAsync,
+                receiverOptions,
+                cancellationToken
+            );
 
             return 0;
         }
