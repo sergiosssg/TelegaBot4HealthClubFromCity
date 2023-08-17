@@ -41,6 +41,11 @@ namespace TelegaBot4HealthClubFromCity
                 AllowedUpdates = { }, // receive all update types
             };
 
+
+            //botTelegaClient.SendTextMessageAsync()
+
+            
+
             botTelegaClient.StartReceiving(
                 HandleUpdateAsync,
                 HandleErrorAsync,
