@@ -27,7 +27,7 @@ namespace TelegaBot4HealthClubFromCity
             //botTelegaClient.GetMeAsync();
 
 
-            Console.WriteLine($"Запущен бот @{botTelegaClient.GetMeAsync().Result.FirstName}");
+            Console.WriteLine($"Запущен бот {botTelegaClient.GetMeAsync().Result.FirstName}");
 
 
             // botTelegaClient.OnMessage += Bot_OnMessage;
