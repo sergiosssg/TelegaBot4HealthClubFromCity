@@ -63,16 +63,25 @@ namespace TelegaBot4HealthClubFromCity
 
                 if (message.Text.ToLower() == "/start")
                 {
-                    await botClient.SendTextMessageAsync(message.Chat, "Добро пожаловать на борт, добрый путник!");
+                    await botClient.SendTextMessageAsync(message.Chat, "Что Вам угодно ...");
                     return;
                 }
-                await botClient.SendTextMessageAsync(message.Chat, "Привет " + sFirstName);
+                else if(message.Text.ToLower().Contains("привет"))
+                {
+                    await botClient.SendTextMessageAsync(message.Chat, "Привет " + sFirstName);
+                    return;
+                }
+                await botClient.SendTextMessageAsync(message.Chat, "нажмите \"/start\" для начала ");
             }
         }
 
 
         public static async Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
         {
+            if (exception != null)
+            {
+                ;
+            }
             // Некоторые действия
             Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(exception));
         }
