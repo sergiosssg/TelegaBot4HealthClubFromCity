@@ -16,7 +16,9 @@ namespace TelegaBot4HealthClubFromCity
     public class TelegaBot4HealthClub
     {
 
-        private static  string botTokem = "6592601003:AAFBLd-o2bDUxhM_nMsWV74B3Rc_rl_-abc";
+        private static string botTokem = "6351080829:AAE49va6tJlpB9LBXQxd95spp2wbzVpuqe8";
+            
+            /*"6592601003:AAFBLd-o2bDUxhM_nMsWV74B3Rc_rl_-abc";*/
 
         private static ITelegramBotClient botTelegaClient = new TelegramBotClient(botTokem);
 
