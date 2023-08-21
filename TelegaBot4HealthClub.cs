@@ -81,6 +81,7 @@ namespace TelegaBot4HealthClubFromCity
                     return;
                 }
                 await botClient.SendTextMessageAsync(message.Chat, "нажмите \"/start\" для начала ");
+                //   отобразить меню выбора
             }
         }
 
