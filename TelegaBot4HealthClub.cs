@@ -47,8 +47,10 @@ namespace TelegaBot4HealthClubFromCity
 
             ;
 
+            ;
+
             botTelegaClient.StartReceiving(
-                HandleUpdateAsync,
+                HandleUpdateAsync1,
                 HandleErrorAsync,
                 receiverOptions,
                 cancellationToken
@@ -60,9 +62,9 @@ namespace TelegaBot4HealthClubFromCity
         }
 
 
-        
 
-        public static async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
+
+        public static async Task HandleUpdateAsync1(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
             // Некоторые действия
             ;
@@ -71,6 +73,8 @@ namespace TelegaBot4HealthClubFromCity
             {
                 var message = update.Message;
 
+
+                var chatId = message.Chat.Id;
 
                 //botClient.GetChatAsync();
 
@@ -97,7 +101,6 @@ namespace TelegaBot4HealthClubFromCity
                 //   отобразить меню выбора
             }
         }
-
 
         public static async Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
         {
