@@ -45,6 +45,7 @@ namespace TelegaBot4HealthClubFromCity
             //botTelegaClient.SendTextMessageAsync()
 
 
+            ;
 
             botTelegaClient.StartReceiving(
                 HandleUpdateAsync,
@@ -53,9 +54,13 @@ namespace TelegaBot4HealthClubFromCity
                 cancellationToken
             );
 
+
+
             return 0;
         }
 
+
+        
 
         public static async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
@@ -65,6 +70,9 @@ namespace TelegaBot4HealthClubFromCity
             if (update.Type == Telegram.Bot.Types.Enums.UpdateType.Message)
             {
                 var message = update.Message;
+
+
+                //botClient.GetChatAsync();
 
                 var sFirstName = message.From.FirstName;
 
