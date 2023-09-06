@@ -56,7 +56,9 @@ namespace TelegaBot4HealthClubFromCity
                 cancellationToken
             );
 
-
+            ; 
+            ; 
+            ;
 
             return 0;
         }
