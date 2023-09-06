@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Telegram.Bot;
-using Telegram.Bot.Args;
+﻿using Telegram.Bot;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 
@@ -16,9 +10,13 @@ namespace TelegaBot4HealthClubFromCity
     public class TelegaBot4HealthClub
     {
 
+
+
         private static string botTokem = "6351080829:AAE49va6tJlpB9LBXQxd95spp2wbzVpuqe8";
-            
-            /*"6592601003:AAFBLd-o2bDUxhM_nMsWV74B3Rc_rl_-abc";*/
+
+        /*"6592601003:AAFBLd-o2bDUxhM_nMsWV74B3Rc_rl_-abc";*/
+
+        private bool _aiireadyHelloSaid;
 
         private static ITelegramBotClient botTelegaClient = new TelegramBotClient(botTokem);
 
@@ -46,7 +44,7 @@ namespace TelegaBot4HealthClubFromCity
 
             //botTelegaClient.SendTextMessageAsync()
 
-            
+
 
             botTelegaClient.StartReceiving(
                 HandleUpdateAsync,
@@ -70,17 +68,24 @@ namespace TelegaBot4HealthClubFromCity
 
                 var sFirstName = message.From.FirstName;
 
-                if (message.Text.ToLower() == "/start")
+                if (message.Text.ToLower().Contains("bye-bye"))
+                {
+                    await botClient.SendTextMessageAsync(message.Chat, "До свидания " + sFirstName);
+                    return;
+                }
+                else if (message.Text.ToLower() == "/start")
                 {
                     await botClient.SendTextMessageAsync(message.Chat, "Что Вам угодно ...");
-                    return;
                 }
-                else if(message.Text.ToLower().Contains("привет"))
+                else if (message.Text.ToLower().Contains("привет"))
                 {
                     await botClient.SendTextMessageAsync(message.Chat, "Привет " + sFirstName);
-                    return;
                 }
-                await botClient.SendTextMessageAsync(message.Chat, "нажмите \"/start\" для начала ");
+                else
+                {
+                    await botClient.SendTextMessageAsync(message.Chat, "нажмите \"/start\" для начала ");
+
+                }
                 //   отобразить меню выбора
             }
         }
