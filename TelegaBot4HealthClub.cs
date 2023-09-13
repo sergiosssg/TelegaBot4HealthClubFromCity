@@ -103,7 +103,7 @@ namespace TelegaBot4HealthClubFromCity
                 }
                 else
                 {
-                    await botClient.SendTextMessageAsync(message.Chat, "нажмите \"/start\"  или \"/help\"  для начала ");
+                    await botClient.SendTextMessageAsync(message.Chat, "нажмите \"/start\" для начала работы или \"/help\"  для помощи ");
 
                 }
                 //   отобразить меню выбора
