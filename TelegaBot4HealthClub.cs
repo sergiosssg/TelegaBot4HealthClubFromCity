@@ -73,14 +73,14 @@ namespace TelegaBot4HealthClubFromCity
             Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(update));
             if (update.Type == Telegram.Bot.Types.Enums.UpdateType.Message)
             {
-                var message = update.Message;
+                Message message = update.Message;
 
-                string sTypeOfMessage = message.GetType().Name;
+                
 
 
-                var chatId = message.Chat.Id;
+                long chatId = message.Chat.Id;
 
-                string sTypeOfChatId = chatId.GetType().Name;
+                
 
 
 
