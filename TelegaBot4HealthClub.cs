@@ -86,7 +86,7 @@ namespace TelegaBot4HealthClubFromCity
 
                 //botClient.GetChatAsync();
 
-                var sFirstName = message.From.FirstName;
+                string sFirstName = message.From.FirstName;
 
                 if (message.Text.ToLower().Contains("bye-bye"))
                 {
