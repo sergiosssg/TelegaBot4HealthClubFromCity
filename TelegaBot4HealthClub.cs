@@ -75,8 +75,14 @@ namespace TelegaBot4HealthClubFromCity
             {
                 var message = update.Message;
 
+                string sTypeOfMessage = message.GetType().Name;
+
 
                 var chatId = message.Chat.Id;
+
+                string sTypeOfChatId = chatId.GetType().Name;
+
+
 
                 //botClient.GetChatAsync();
 
@@ -102,6 +108,27 @@ namespace TelegaBot4HealthClubFromCity
                 }
                 //   отобразить меню выбора
             }
+            else if (update.Type == Telegram.Bot.Types.Enums.UpdateType.CallbackQuery)
+            {
+                ;
+            }
+            else if (update.Type == Telegram.Bot.Types.Enums.UpdateType.InlineQuery)
+            {
+                ;
+            }
+            else if (update.Type == Telegram.Bot.Types.Enums.UpdateType.ChosenInlineResult)
+            {
+                ;
+            }
+            else if (update.Type == Telegram.Bot.Types.Enums.UpdateType.CallbackQuery)
+            {
+                ;
+            }
+            else if (update.Type == Telegram.Bot.Types.Enums.UpdateType.ChatJoinRequest) 
+            {
+                ;
+            }
+
         }
 
         public static async Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
