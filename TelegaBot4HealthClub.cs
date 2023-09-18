@@ -1,4 +1,5 @@
-﻿using Telegram.Bot;
+﻿using System.Linq;
+using Telegram.Bot;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
@@ -97,11 +98,24 @@ namespace TelegaBot4HealthClubFromCity
 
                     await botClient.SendTextMessageAsync(message.Chat, "Что Вам угодно ...");
 
+                    IKeyboardButton[] keyboardButtons = new InlineKeyboardButton[4];
 
-                    IKeyboardButton kbd1 = new InlineKeyboardButton("Пункт 1");
-                    IKeyboardButton kbd2 = new InlineKeyboardButton("Пункт 2");
-                    IKeyboardButton kbd3 = new InlineKeyboardButton("Пункт 3");
-                    IKeyboardButton kbd4 = new InlineKeyboardButton("Пункт 4");
+                    
+                    keyboardButtons[0] = new InlineKeyboardButton("Пункт 1");
+
+                    keyboardButtons[1] = new InlineKeyboardButton("Пункт 2");
+
+                    keyboardButtons[2] = new InlineKeyboardButton("Пункт 3");
+
+                    keyboardButtons[3] = new InlineKeyboardButton("Пункт 4");
+
+
+
+                    //InlineKeyboardMarkup inlineKeyboard = new InlineKeyboardMarkup(sFirstName, keyboardButtons);
+
+                    InlineKeyboardMarkup inlineKeyboard = new InlineKeyboardMarkup(new InlineKeyboardButton("Пункт 0"));
+
+                    //botClient.ReceiveAsync()
 
                 }
                 else if (message.Text.ToLower().Contains("привет") || message.Text.ToLower().Contains("hello"))
