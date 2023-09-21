@@ -115,6 +115,8 @@ namespace TelegaBot4HealthClubFromCity
 
                     InlineKeyboardMarkup inlineKeyboard = new InlineKeyboardMarkup(new InlineKeyboardButton("Пункт 0"));
 
+                    //botClient.OnMakingApiRequest
+
                     //botClient.ReceiveAsync()
 
                 }
