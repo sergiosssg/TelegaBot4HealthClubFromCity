@@ -118,6 +118,7 @@ namespace TelegaBot4HealthClubFromCity
                     //botClient.OnMakingApiRequest
 
                     //botClient.ReceiveAsync()
+                    //botClient.SendChatActionAsync()
 
                 }
                 else if (message.Text.ToLower().Contains("привет") || message.Text.ToLower().Contains("hello"))
